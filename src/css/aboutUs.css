@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    padding: 15px;
+    margin: 5px;
+}
+
+
+
+.lottieAnime {
+    height: 400px;
+    width: 400px;
+}
+
+.textPage div {
+    width: 400px;
+    height: 400px;
+    font-family: 'Montserrat', sans-serif;
+    margin: 5px;
+    line-height: 22px;
+    letter-spacing: 1px;
+}
+
+.faqPage {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+.question1,
+.question2,
+.question3 {
+    background: whitesmoke;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 20px 15px;
+    text-align: center;
+    margin: 40px auto;
+    width: 500px;
+    height: 40px;
+    transition: all ease-in-out 150ms;
+
+}
+
+#button1,
+#button2,
+#button3 {
+    display: inline;
+    border-radius: 4px;
+    color: black;
+    border: 2px solid transparent;
+    padding: 5px 5px;
+    background: inherit;
+    margin: 5px !important;
+}
+
+.hideText1,
+.hideText2,
+.hideText3 {
+    opacity: 1;
+    font-family: 'Montserrat', sans-serif;
+    animation: fadeIn 2.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.question1-active {
+    transition: all ease-in-out 500ms;
+    height: 100px;
+}

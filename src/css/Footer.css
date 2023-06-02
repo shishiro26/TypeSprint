@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    background: goldenrod;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    height: 21%;
+}
+
+h4 {
+    margin: auto 5px;
+    user-select: none;
+}
+
+.Container {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+input {
+    outline: none;
+
+}
+
+.inbox p,
+input,
+button {
+    margin: 5px;
+    padding: 3px 5px;
+
+}
+
+.inbox p {
+    width: 235px;
+}
+
+.text {
+    /* margin: auto 5px; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+}
+
+.text button {
+    border-radius: 50%;
+    outline: none;
+    height: 32px;
+    width: 34px;
+    outline: none;
+    border: none;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottom p {
+    user-select: none;
+}
+
+.bottom a {
+    text-decoration: none;
+    color: #555;
+}
+
+.bottom a:hover {
+    color: black;
+    letter-spacing: 0.7px;
+
+}
+
+.text .links .icon1 {
+    color: #00acee;
+}
+
+.text .links .icon2 {
+    color: #E4405F;
+}
+
+.text .links .icon3 {
+    color: #5865F2;
+}
+
+.text .links .icon3:active~.text button:nth-child(3):active {
+    background-color: #5865F2;
+    color: white;
+}
+
+.ourLinks {
+    text-transform: capitalize;
+    padding: 5px;
+    user-select: none;
+}
+
+.ourLinks a {
+    text-decoration: none;
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+    color: #555;
+    margin: 3px;
+}
+
+
+
+.ourLinks a:hover {
+    color: black;
+    letter-spacing: 0.5px;
+}
