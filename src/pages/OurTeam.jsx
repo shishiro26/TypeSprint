@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import {
   faDiscord,
-  faInstagram,
+  faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -33,9 +33,21 @@ function OurTeam() {
               IIIT LUCKNOW
             </p>
             <div className="social">
-              <FontAwesomeIcon icon={faTwitter} className="tweet" />
-              <FontAwesomeIcon icon={faDiscord} className="tweet" />
-              <FontAwesomeIcon icon={faInstagram} className="tweet" />
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className="tweet"
+                style={{ color: "#00ACEE" }}
+              />
+              <FontAwesomeIcon
+                icon={faDiscord}
+                className="tweet"
+                style={{ color: "#5865F2" }}
+              />
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="tweet"
+                style={{ color: "#0A66C2" }}
+              />
             </div>
           </div>
           <div className="narasimha">
@@ -52,9 +64,21 @@ function OurTeam() {
               IIIT LUCKNOW
             </p>
             <div className="social">
-              <FontAwesomeIcon icon={faTwitter} className="tweet" />
-              <FontAwesomeIcon icon={faDiscord} className="tweet" />
-              <FontAwesomeIcon icon={faInstagram} className="tweet" />
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className="tweet"
+                style={{ color: "#00ACEE" }}
+              />
+              <FontAwesomeIcon
+                icon={faDiscord}
+                className="tweet"
+                style={{ color: "#5865F2" }}
+              />
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="tweet"
+                style={{ color: "#0A66C2" }}
+              />
             </div>
           </div>
           <div className="narasimha">
@@ -71,9 +95,21 @@ function OurTeam() {
               IIIT LUCKNOW
             </p>
             <div className="social">
-              <FontAwesomeIcon icon={faTwitter} className="tweet" />
-              <FontAwesomeIcon icon={faDiscord} className="tweet" />
-              <FontAwesomeIcon icon={faInstagram} className="tweet" />
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className="tweet"
+                style={{ color: "#00ACEE" }}
+              />
+              <FontAwesomeIcon
+                icon={faDiscord}
+                className="tweet"
+                style={{ color: "#5865F2" }}
+              />
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="tweet"
+                style={{ color: "#0A66C2" }}
+              />
             </div>
           </div>
           <div className="narasimha">
@@ -90,9 +126,21 @@ function OurTeam() {
               IIIT LUCKNOW
             </p>
             <div className="social">
-              <FontAwesomeIcon icon={faTwitter} className="tweet" />
-              <FontAwesomeIcon icon={faDiscord} className="tweet" />
-              <FontAwesomeIcon icon={faInstagram} className="tweet" />
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className="tweet"
+                style={{ color: "#00ACEE" }}
+              />
+              <FontAwesomeIcon
+                icon={faDiscord}
+                className="tweet"
+                style={{ color: "#5865F2" }}
+              />
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="tweet"
+                style={{ color: "#0A66C2" }}
+              />
             </div>
           </div>
           <div className="narasimha">
@@ -109,9 +157,21 @@ function OurTeam() {
               IIIT LUCKNOW
             </p>
             <div className="social">
-              <FontAwesomeIcon icon={faTwitter} className="tweet" />
-              <FontAwesomeIcon icon={faDiscord} className="tweet" />
-              <FontAwesomeIcon icon={faInstagram} className="tweet" />
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className="tweet"
+                style={{ color: "#00ACEE" }}
+              />
+              <FontAwesomeIcon
+                icon={faDiscord}
+                className="tweet"
+                style={{ color: "#5865F2" }}
+              />
+              <FontAwesomeIcon
+                icon={faLinkedin}
+                className="tweet"
+                style={{ color: "#0A66C2" }}
+              />
             </div>
           </div>
         </div>
