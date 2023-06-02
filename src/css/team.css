@@ -6,7 +6,7 @@
 .mainClass {
     max-width: 1254px;
     width: fit-content;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .narasimha {
@@ -42,4 +42,35 @@
     display: flex;
     justify-content: center;
     gap: 20px
+}
+
+.images {
+    animation: slide 16s infinite linear;
+    scroll-behavior: smooth;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+
+    10% {
+        transform: translateX(-10%);
+    }
+
+    20% {
+        transform: translateX(-20%);
+    }
+
+    30% {
+        transform: translateX(-30%);
+    }
+
+    40% {
+        transform: translateX(-40%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
 }
