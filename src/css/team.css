@@ -1,6 +1,45 @@
 * {
     margin: 0;
     padding: 0;
-
 }
 
+.mainClass {
+    max-width: 1254px;
+    width: fit-content;
+    overflow: scroll;
+}
+
+.narasimha {
+    max-width: 300px;
+    border-radius: 4px;
+    text-align: center;
+    font-family: arial;
+    margin: 15px;
+    padding: 15px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+    margin: 5px;
+}
+
+
+
+.tweet {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    margin: 5px;
+}
+
+.tweet:hover {
+    opacity: 0.7;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 20px
+}
