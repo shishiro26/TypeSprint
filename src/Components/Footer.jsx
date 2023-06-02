@@ -17,9 +17,14 @@ export default function Footer() {
         <div className="inbox" style={{ height: "100px" }}>
           <p>Stay updated. Subscribe for typing tips, offers, and updates.</p>
           <div class="input-container">
-            <input required="" placeholder="Email Address" type="email" />
+            <input
+              required=""
+              placeholder="Email Address"
+              type="email"
+              className="emailBox"
+            />
             <button class="invite-btn" type="button">
-              Subscribe
+              Follow
             </button>
           </div>
         </div>

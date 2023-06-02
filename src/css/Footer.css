@@ -1,7 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
+
+.emailBox {
+    max-width: 190px;
+    height: 24px;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    padding: 3px 5px;
+    border: 2px solid lightgray;
+    font-size: 1rem;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+
+
+.emailBox:hover,
+.emailBox:focus,
+.emailBox:hover .emailBox {
+    outline: none;
+    border-color: #05060f;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.emailBox:focus {
+    color: #05060fc2;
+}
+
+
 
 footer {
     background: goldenrod;
@@ -119,4 +149,27 @@ button {
 .ourLinks a:hover {
     color: black;
     letter-spacing: 0.5px;
+}
+
+.invite-btn {
+    border: 2px solid lightgray;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    margin-left: 0px;
+    padding: 3px 5px;
+    font-size: 10px;
+    height: 33px;
+    font-family: 'Roboto Slab', serif;
+    position: relative;
+    top: -3px;
+}
+
+.invite-btn:hover,
+.invite-btn:focus {
+    outline: none;
+    border-color: #05060f;
+}
+
+.invite-btn:hover {
+    color: #05060fc2;
 }

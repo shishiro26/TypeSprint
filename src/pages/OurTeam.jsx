@@ -5,8 +5,9 @@ function OurTeam() {
   return (
     <section>
       <div>
-        <h1>Our Team</h1>
+        <h1>Who we are?</h1>
         
+
       </div>
     </section>
   );
