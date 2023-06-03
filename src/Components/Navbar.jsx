@@ -15,14 +15,14 @@ export default function Navbar() {
               <Link to="/play">PLAY</Link>
             </li>
             <li>
-              <Link to="/about">ABOUT US</Link>
+              <Link to="/stats">STATS</Link>
             </li>
             <li>
-              <Link to="/contact">CONTACT US</Link>
+              <Link to="/online">Play Online</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/team">OUR TEAM</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>

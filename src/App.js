@@ -7,6 +7,8 @@ import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs";
 import Footer from "./Components/Footer";
 import Play from "./Components/play";
+import Online from "./pages/online";
+import Stats from "./pages/stats";
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
           <Route path="/Contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/play" element={<Play />} />
+          <Route path="/online" element={<Online />} />
+          <Route path="/stats" element={<Stats/>}/>
         </Routes>
         <Footer />
       </>
