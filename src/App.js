@@ -3,7 +3,7 @@ import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import OurTeam from "./pages/OurTeam";
 import ContactUs from "./pages/ContactUs";
-// import Login from "./Components/login";
+import Login from "./Components/login";
 import AboutUs from "./pages/AboutUs";
 import Footer from "./Components/Footer";
 import Play from "./Components/play";
@@ -22,8 +22,9 @@ export default function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/play" element={<Play />} />
           <Route path="/online" element={<Online />} />
-          <Route path="/stats" element={<Stats/>}/>
+          <Route path="/stats" element={<Stats />} />
         </Routes>
+        <Login />
         <Footer />
       </>
     </div>

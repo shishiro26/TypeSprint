@@ -1,8 +1,63 @@
-@import url("https://fonts.googleapis.com/css2?family=Exo:wght@500&display=swap");
-
 * {
     margin: 0;
     padding: 0;
 }
 
+.container1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.formBox {
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 454px;
+    height: 414px;
+    margin: 15px;
+    border-radius: 4px;
+    padding: 10px 15px;
+}
+
+.email {
+    max-width: 400px;
+    height: 44px;
+    width: 380px;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid lightgray;
+    font-size: 1rem;
+
+}
+
+.labelBox {
+    display: block;
+    margin-bottom: .3rem;
+    font-size: .9rem;
+    font-weight: bold;
+    color: #05060f99;
+    transition: color .3s cubic-bezier(.25, .01, .25, 1) 0s;
+}
+
+.email:hover,
+.email:focus,
+.mailBox:hover .email {
+    outline: none;
+    border-color: #05060f;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.mailBox:hover .labelBox,
+.email:focus {
+    color: #05060fc2;
+}
+
+.forgotBox {
+    text-decoration: none
+}
+
+.forgotBox a {
+    text-decoration: none;
+}
