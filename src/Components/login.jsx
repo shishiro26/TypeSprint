@@ -16,19 +16,16 @@ export default function Login() {
             <label className="labelBox">Password</label>
             <input required="" type="password" name="text" className="email" />
           </div>
-          <hr style={{ width: "430px" }} />
-          <button className="btn" style={{ margin: "10px" }}>
-            {" "}
-            Login
-          </button>
+          <hr className="line" />
+          <button className="btnBox"> Login</button>
           <div
             className="forgotBox"
             style={{
               display: "flex",
               flexDirection: "row",
-              justifyContent: "space-around",
               fontSize: "1em",
-              gap: "5px",
+              gap: "75px",
+              margin: "10px",
             }}
           >
             <p>
