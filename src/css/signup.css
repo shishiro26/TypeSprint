@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.signUpBox {
+    background-color: whitesmoke;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    padding: 15px 20px;
+    width: 500px;
+    height: 700px;
+    overflow: scroll;
+}
+
+
+.fullName {
+    width: 416px;
+    height: 44px;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid lightgray;
+    font-size: 1rem;
+
+}
+
+.label {
+    display: block;
+    margin-bottom: .3rem;
+    font-size: .9rem;
+    font-weight: bold;
+    color: #05060f99;
+    transition: color .3s cubic-bezier(.25, .01, .25, 1) 0s;
+}
+
+.fullName:hover,
+.fullName:focus,
+.input-group:hover .fullName {
+    outline: none;
+    border-color: #05060f;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}

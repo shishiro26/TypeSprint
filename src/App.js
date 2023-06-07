@@ -9,6 +9,7 @@ import Footer from "./Components/Footer";
 import Play from "./Components/play";
 import Online from "./pages/online";
 import Stats from "./pages/stats";
+import SignUp from "./Components/signup";
 
 export default function App() {
   return (
@@ -22,9 +23,12 @@ export default function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/play" element={<Play />} />
           <Route path="/online" element={<Online />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/stats" element={<Stats />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
-        <Login />
+        {/* <Login /> */}
+        {/* <SignUp /> */}
         <Footer />
       </>
     </div>

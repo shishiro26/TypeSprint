@@ -29,10 +29,10 @@ export default function Login() {
             }}
           >
             <p>
-              New to TypeSprint? Try <Link path="/">Sign Up</Link>
+              New to TypeSprint? Try <Link to="/signup">Sign Up</Link>
             </p>
             <p>
-              <Link path="/">Forgot Password</Link>
+              <Link to="/">Forgot Password</Link>
             </p>
           </div>
         </div>
