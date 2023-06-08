@@ -6,7 +6,7 @@ import ContactUs from "./pages/ContactUs";
 import Login from "./Components/login";
 import AboutUs from "./pages/AboutUs";
 import Footer from "./Components/Footer";
-import Play from "./Components/play";
+import Play from "./pages/play";
 import Online from "./pages/online";
 import Stats from "./pages/stats";
 import SignUp from "./Components/signup";

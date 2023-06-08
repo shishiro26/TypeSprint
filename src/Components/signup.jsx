@@ -9,7 +9,13 @@ function SignUp() {
     e.preventDefault();
     setShowPassword((type) => (type === "password" ? "text" : "password"));
   };
-
+  const handleSubmit = (e) => {};
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  };
   return (
     <div
       style={{
@@ -65,10 +71,10 @@ function SignUp() {
             height={20}
             width={20}
             style={{
-              position: "static",
+              position: "absolute",
               bottom: "100px",
               cursor: "pointer",
-              right: "400px",
+              right: "450px",
             }}
             onClick={togglePassword}
           />
@@ -91,7 +97,7 @@ function SignUp() {
             height={20}
             width={20}
             style={{
-              position: "static",
+              position: "absolute",
               bottom: "15px",
               right: "450px",
               cursor: "pointer",
@@ -104,6 +110,8 @@ function SignUp() {
           <button
             className="btn"
             style={{ width: "452px", marginTop: "10px", marginBottom: "10px" }}
+            onKeyDown={handleKeyDown}
+            onSubmit={handleSubmit}
           >
             Sign Up
           </button>
