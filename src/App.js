@@ -10,8 +10,12 @@ import Play from "./pages/play";
 import Online from "./pages/online";
 import Stats from "./pages/stats";
 import SignUp from "./Components/signup";
+import { useEffect } from "react";
 
 export default function App() {
+  useEffect(() => {
+    document.title = "TypeSprint";
+  });
   return (
     <div className="App">
       <>

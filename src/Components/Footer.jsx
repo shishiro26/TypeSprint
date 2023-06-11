@@ -16,14 +16,14 @@ export default function Footer() {
         <h4>TypeSprint</h4>
         <div className="inbox" style={{ height: "100px" }}>
           <p>Stay updated. Subscribe for typing tips, offers, and updates.</p>
-          <div class="input-container">
+          <div className="input-container">
             <input
               required=""
               placeholder="Email Address"
               type="email"
               className="emailBox"
             />
-            <button class="invite-btn" type="button">
+            <button className="invite-btn" type="button">
               Follow
             </button>
           </div>

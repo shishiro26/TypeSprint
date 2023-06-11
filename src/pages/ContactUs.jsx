@@ -127,7 +127,7 @@ function ContactUs() {
         >
           <h1>Contact Us</h1>
           <div style={{ display: "flex" }}>
-            <div class="input-group">
+            <div className="input-group">
               <label className="label">First Name</label>
               <input
                 required=""

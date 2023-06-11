@@ -26,11 +26,11 @@ export default function Login() {
       <form className="formBox">
         <h1>Login</h1>
         <div>
-          <div class="mailBox">
+          <div className="mailBox">
             <label className="labelBox">Email</label>
             <input required="" type="email" name="text" className="email" />
           </div>
-          <div class="mailBox">
+          <div className="mailBox">
             <label className="labelBox">Password</label>
             <input
               required=""
