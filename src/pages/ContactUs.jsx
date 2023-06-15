@@ -168,7 +168,7 @@ function ContactUs() {
               type="number"
               name="number"
               id="number"
-              placeholder="phone"
+              placeholder="Phone"
               className="firstName-active"
               style={{ MozAppearance: "textfield" }}
             />

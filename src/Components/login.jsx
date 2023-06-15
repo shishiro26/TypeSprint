@@ -4,6 +4,13 @@ import "../css/login.css";
 import { useState } from "react";
 import show from "../assets/show.png";
 import hide from "../assets/hide.png";
+import WebFont from "webfontloader";
+
+WebFont.load({
+  google: {
+    families: ["Play&display=swap"],
+  },
+});
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState("password");
@@ -64,6 +71,7 @@ export default function Login() {
               fontSize: "1em",
               gap: "75px",
               margin: "10px",
+              fontFamily: "Play, sans-serif",
             }}
           >
             <p>

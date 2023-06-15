@@ -1,116 +1,172 @@
-import React from "react";
-import randomWords from "random-words";
-import { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
+import paragraphs from "./paragraph";
+import { useState, useEffect } from "react";
 import "../css/play.css";
-function Play() {
-  const countWords = 200;
-  const maxTime = 60;
-  // const childRef = useRef(null);
-  const [words, setWords] = useState([]);
-  const [timer, setTimer] = useState(maxTime);
-  const spanRef = useRef(null);
-  const [index, setIndex] = useState(0);
-  const [currInput, setCurrInput] = useState("");
-  // const span = document.querySelectorAll(".paraBox span");
+import WebFont from "webfontloader";
+
+WebFont.load({
+  google: {
+    families: ["Montserrat&display=swap"],
+  },
+});
+export default function Play() {
+  let countDown = 60,
+    isTyping = 0,
+    paraRef = useRef(null),
+    inputRef = useRef(null);
+  // WPMRef = useRef(null),
+  // accuracyRef = useRef(null);
+
+  const [currInput, setCurrInput] = useState(""),
+    [timer, setTimer] = useState(countDown),
+    [charIndex, setCharIndex] = useState(0),
+    [mistakes, setMistakes] = useState(0),
+    [WPM, setWPM] = useState(0),
+    [accuracy, setAccuracy] = useState(0);
+  let timeLeft = timer;
+
   useEffect(() => {
-    setWords(generateWords);
+    generateParagraph();
   }, []);
-  function generateWords() {
-    return new Array(countWords).fill(null).map((words) => randomWords());
-  }
-  const handleStart = () => {
+
+  function handleTimer() {
     const timeInterval = setInterval(() => {
-      setTimer((time) => {
-        if (time === 0) {
-          return clearInterval(timeInterval);
+      setTimer((prevTimer) => {
+        if (prevTimer === 0) {
+          clearInterval(timeInterval);
+          return 0;
         } else {
-          return time - 1;
+          return prevTimer - 1;
         }
       });
     }, 1000);
-  };
+  }
 
-  const typingText = () => {
-    return (
-      <>
-        {words.map((word, i) => (
-          <span id={i}>
-            {word.split("").map((letter, id) => (
-              <span key={id} ref={spanRef}>
-                {letter}
-              </span>
-            ))}
-            <span> </span>
-          </span>
-        ))}
-      </>
-    );
-  };
+  function generateParagraph() {
+    const paraIndex = Math.floor(Math.random() * paragraphs.length);
+    paraRef.current.innerHTML = paragraphs[paraIndex]
+      .split("")
+      .map((char, i) => `<span key=${i}>${char}</span>`)
+      .join("");
+  }
 
   const handleInputChange = (e) => {
     setCurrInput(e.target.value);
     console.log(e.target.value);
-    // console.log(e.target.length);
-    const typedText = e.target.value;
+    const typedText = e.target.value.split("")[charIndex];
+    const childSpans = paraRef.current.querySelectorAll("span");
 
-    const currentWord = words[index];
-    const currentLetter = currentWord.charAt(typedText.length - 1);
-    console.log("The current letter is " + currentLetter);
-    if (typedText === currentWord) {
-      setCurrInput("");
-      console.log("Word completed!");
-      setIndex((prevIndex) => prevIndex + 1);
-    } else if (typedText.charAt(typedText.length - 1) === currentLetter) {
-      console.log("Correct letter!");
-      const spanChild = spanRef.current;
-      spanChild.className = "correct";
-
-      if (typedText.length === currentWord.length) {
-        console.log("Word completed!");
-
-        setCurrInput("");
-        setIndex((prevIndex) => prevIndex + 1);
+    if (charIndex < childSpans.length - 1 && timeLeft > 0) {
+      if (!isTyping) {
+        isTyping = true;
       }
-    } else {
-      console.log("Incorrect letter!");
+      if (typedText == null) {
+        if (charIndex > 0) {
+          setCharIndex(() => charIndex - 1);
+          if (childSpans[charIndex].classList.contains("incorrect")) {
+            setMistakes(() => mistakes - 1);
+          }
+          childSpans[charIndex].classList.contains("correct", "incorrect");
+        }
+      } else {
+        if (childSpans[charIndex].innerText === typedText) {
+          childSpans[charIndex].classList.add("correct");
+        } else {
+          setMistakes(() => mistakes + 1);
+          childSpans[charIndex].classList.add("incorrect");
+        }
+        setCharIndex(() => charIndex + 1);
+      }
+
+      setWPM((WPM) => {
+        WPM = (
+          ((charIndex - mistakes) / 5 / (countDown - timeLeft)) *
+          60
+        ).toFixed(1);
+        console.log(WPM);
+        return (WPM = WPM < 0 || !WPM || WPM === Infinity ? 0 : WPM);
+        // WPMRef.current.innerHTML = WPM;
+      });
+      setAccuracy((accuracy) => {
+        return (accuracy = (
+          ((currInput.length - mistakes) / currInput.length) *
+          100
+        ).toFixed(1));
+        // accuracyRef.current.innerHTML = `${accuracy}%`;
+      });
     }
   };
 
+  function handleClick() {
+    inputRef.current.focus();
+    generateParagraph();
+    handleTimer();
+    setTimer(countDown);
+    setCurrInput("");
+    setMistakes(0);
+    setAccuracy(0);
+    setWPM(0);
+    setCharIndex(0);
+  }
   return (
-    <div className="wrapper">
+    <div className="parentType" style={{ background: "black", color: "white" }}>
       <input
         type="text"
-        className="typedChar"
         onChange={handleInputChange}
         value={currInput}
+        ref={inputRef}
+        style={{ opacity: "0" }}
       />
-      <ul>
-        <li>
-          <div>
-            timer:
-            <span>{maxTime}</span>
-          </div>
-        </li>
-        <li>
-          <div>
-            wpm:
-            <span>56</span>
-          </div>
-        </li>
-      </ul>
-      <button className={handleStart}>start</button>
+      <div className="navBar">
+        <ul
+          style={{
+            margin: "0",
+            padding: "0",
+            listStyle: "none",
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
+          <li>
+            Time Left:
+            <span>{timer}s</span>
+          </li>
+          <li>
+            mistakes:
+            <span>{mistakes}</span>
+          </li>
+          <li>
+            WPM:
+            <span /* ref={WPMRef}*/>{WPM}</span>
+          </li>
+          <li>
+            accuracy:
+            <span /*ref={accuracyRef}*/>{accuracy}%</span>
+          </li>
+          <li>
+            <button
+              onClick={() => {
+                handleClick();
+              }}
+              className="startBtn"
+              style={{
+                fontFamily: "Montserrat,sans-serif",
+              }}
+            >
+              start
+            </button>
+          </li>
+        </ul>
+      </div>
       <div
+        ref={paraRef}
         className="paraBox"
         style={{
-          margin: "10px",
-          boxShadow: "2px 5px 10px rgba(0,0,0,0.5)",
-          padding: "10px 15px",
+          fontFamily: "Montserrat,sans-serif",
+          letterSpacing: "1px",
         }}
-      >
-        {typingText()}
-      </div>
+      ></div>
     </div>
   );
 }
-
-export default Play;

@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import "../css/signup.css";
 import show from "../assets/show.png";
 import hide from "../assets/hide.png";
+import WebFont from "webfontloader";
+
+WebFont.load({
+  google: {
+    families: ["Play&display=swap"],
+  },
+});
 function SignUp() {
   const [showPassword, setShowPassword] = useState("password");
   const togglePassword = (e) => {
@@ -116,7 +123,11 @@ function SignUp() {
             Sign Up
           </button>
         </div>
-        <div>
+        <div
+          style={{
+            fontFamily: "play,sans-serif",
+          }}
+        >
           <p>
             Already a member? Try{" "}
             <Link to="/login" style={{ textDecoration: "none", margin: "5px" }}>
