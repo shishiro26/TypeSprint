@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Wallpoet&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.btnStart {
+    border: 2px solid #555;
+    background-color: #05060f0a;
+    border-radius: .5rem;
+    padding: 0.75rem 1rem;
+    height: 48px;
+    width: 466px;
+    margin: 10px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.btnStart:hover,
+.btnStart:focus {
+    outline: none;
+    border-color: ghostwhite;
+    letter-spacing: 1px;
+}
+
+.btnStart:hover {
+    color: white;
+}
+
+.reviewTitle {
+
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.reviewOne {
+    font-size: 48px;
+    font-family: "Kanit", sans-serif;
+    color: black;
+
+}
+
+.underline {
+    max-width: 100%;
+    border-bottom: 4px solid #53cbef;
+    width: 225px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.reviewContainer {
+    font-family: "Sono", sans-serif;
+    text-align: center;
+    background-color: whitesmoke;
+    max-width: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    padding: 30px 20px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+#role {
+    color: #53cbef;
+}
+
+#info {
+    word-spacing: 1px;
+    font-family: "Quicksand", sans-serif;
+}
+
+#image {
+    width: 150px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+
+
+.next,
+.previous {
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    background: inherit;
+    color: black;
+    border: 2px solid black;
+}
+.next,
+.previous,
+.random:hover {
+    cursor: pointer;
+}

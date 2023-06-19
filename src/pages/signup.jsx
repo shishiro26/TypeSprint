@@ -55,7 +55,6 @@ function SignUp() {
         alignItems: "center",
       }}
     >
-      {/* {JSON.stringify(data)}   */}
       <form className="signUpBox" onSubmit={submitForm}>
         <h1>Sign Up</h1>
         <div>

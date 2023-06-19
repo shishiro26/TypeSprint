@@ -23,15 +23,15 @@ export default function Navbar1() {
         <nav className="navBarNav">
           <ul className="navBarUL">
             <li className="navBarLI">
-              <Link className="navBarLink" to="/">
+              <Link className="navBarLink" to="/home">
                 HOME
               </Link>
             </li>
-            <li className="navBarLI">
+            {/* <li className="navBarLI">
               <Link className="navBarLink" to="/preview">
                 PREVIEW
               </Link>
-            </li>
+            </li> */}
             <li className="navBarLI">
               <button
                 className="loginBtn"

@@ -11,8 +11,9 @@ import Stats from "./pages/stats";
 import SignUp from "./pages/signup";
 import { useEffect } from "react";
 import Navbar1 from "./Components/navBar1";
-import Preview from "./pages/preview";
+// import Preview from "./pages/preview";
 import Profile from "./pages/profile";
+import HomeBar from "./Components/home1";
 
 export default function App() {
   useEffect(() => {
@@ -21,22 +22,21 @@ export default function App() {
   return (
     <div className="App">
       <>
-        {/* <Navbar /> */}
-        <Navbar1 />
+        <Navbar />
+        {/* <Navbar1 /> */}
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<Home />} />
-          <Route path="/preview" element={<Preview />} />
+          {/* <Route path="/preview" element={<Preview />} /> */}
           <Route path="/play" element={<Play />} />
           <Route path="/Team" element={<OurTeam />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/Contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/stats" element={<Stats />} />
+          <Route path="/home" element={<HomeBar />} />
         </Routes>
-        {/* <Login /> */}
-        {/* <SignUp /> */}
         <Footer />
       </>
     </div>

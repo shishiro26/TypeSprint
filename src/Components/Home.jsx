@@ -22,6 +22,9 @@ function Home() {
       <div
         className="textOverlay"
         style={{
+          position: "absolute",
+          top: "50%",
+          zIndex: "999",
           color: "white",
         }}
       >

@@ -71,7 +71,7 @@ export default function Login() {
               width={20}
               style={{
                 position: "absolute",
-                top: "317px",
+                top: "320px",
                 right: "460px",
                 cursor: "pointer",
               }}
