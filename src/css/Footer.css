@@ -111,7 +111,7 @@ button {
 
 .bottom a:hover {
     color: black;
-    letter-spacing: 0.7px;
+    transform: scale(1.05);
 
 }
 
@@ -151,7 +151,7 @@ button {
 
 .ourLinks a:hover {
     color: black;
-    letter-spacing: 0.5px;
+    transform: scale(1.1);
 }
 
 .invite-btn {

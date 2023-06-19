@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import anime from "./contact.json";
 import Lottie from "react-lottie";
 import "../css/contactus.css";

@@ -1,24 +1,58 @@
-import React, { useState, useRef } from "react";
-
+import React from "react";
+import video from "../assets/project_intro.mp4";
+import { Link } from "react-router-dom";
+import "../css/home.css";
 function Home() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef(null);
-
-  const togglePlay = () => {
-    if (isPlaying) {
-      videoRef.current.pause();
-    } else {
-      videoRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
   return (
-    <div>
-      <video ref={videoRef} width="100%" height="100%" controls>
-        <source src="https://youtu.be/7M_3Yq0QE6Ms" type="video/mp4" />
-      </video>
-      <button onClick={togglePlay}>{isPlaying ? "Pause" : "Play"}</button>
+    <div
+      className="parentVideo"
+      style={{ backgroundColor: "black", height: "10%" }}
+    >
+      <video
+        src={video}
+        // width="100%"
+        // height="0%"
+        autoPlay
+        loop
+        style={{
+          opacity: "0.2",
+          zIndex: "-999",
+        }}
+      />
+      <div
+        className="textOverlay"
+        style={{
+          color: "white",
+        }}
+      >
+        <h1
+          style={{
+            fontSize: "50px",
+          }}
+        >
+          Master the Keyboard!
+        </h1>
+        <p
+          style={{
+            fontSize: "20px",
+            padding: "15px",
+            margin: "5px",
+          }}
+        >
+          Unleash your typing potential with our interactive tests
+        </p>
+        <button className="btnStart">
+          <Link
+            to="/play"
+            style={{
+              textDecoration: "none",
+              color: "white",
+            }}
+          >
+            Start
+          </Link>
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import paragraphs from "./paragraph";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import "../css/play.css";
 import WebFont from "webfontloader";
 
@@ -9,37 +9,44 @@ WebFont.load({
     families: ["Montserrat&display=swap"],
   },
 });
+
 export default function Play() {
   let countDown = 60,
     isTyping = 0,
     paraRef = useRef(null),
     inputRef = useRef(null);
-  // WPMRef = useRef(null),
-  // accuracyRef = useRef(null);
 
   const [currInput, setCurrInput] = useState(""),
     [timer, setTimer] = useState(countDown),
     [charIndex, setCharIndex] = useState(0),
     [mistakes, setMistakes] = useState(0),
     [WPM, setWPM] = useState(0),
-    [accuracy, setAccuracy] = useState(0);
+    [accuracy, setAccuracy] = useState(0),
+    [isTimerRunning, setIsTimerRunning] = useState(false);
+
   let timeLeft = timer;
 
   useEffect(() => {
+    inputRef.current.disabled = true;
     generateParagraph();
   }, []);
 
   function handleTimer() {
-    const timeInterval = setInterval(() => {
-      setTimer((prevTimer) => {
-        if (prevTimer === 0) {
-          clearInterval(timeInterval);
-          return 0;
-        } else {
-          return prevTimer - 1;
-        }
-      });
-    }, 1000);
+    if (!isTimerRunning) {
+      setIsTimerRunning(true);
+
+      const timeInterval = setInterval(() => {
+        setTimer((prevTimer) => {
+          if (prevTimer === 0) {
+            clearInterval(timeInterval);
+            setIsTimerRunning(false);
+            return 0;
+          } else {
+            return prevTimer - 1;
+          }
+        });
+      }, 1000);
+    }
   }
 
   function generateParagraph() {
@@ -85,19 +92,18 @@ export default function Play() {
         ).toFixed(1);
         console.log(WPM);
         return (WPM = WPM < 0 || !WPM || WPM === Infinity ? 0 : WPM);
-        // WPMRef.current.innerHTML = WPM;
       });
       setAccuracy((accuracy) => {
         return (accuracy = (
           ((currInput.length - mistakes) / currInput.length) *
           100
         ).toFixed(1));
-        // accuracyRef.current.innerHTML = `${accuracy}%`;
       });
     }
   };
 
   function handleClick() {
+    inputRef.current.disabled = false;
     inputRef.current.focus();
     generateParagraph();
     handleTimer();
@@ -108,8 +114,12 @@ export default function Play() {
     setWPM(0);
     setCharIndex(0);
   }
+
   return (
-    <div className="parentType" style={{ background: "black", color: "white" }}>
+    <div
+      className="parentType"
+      style={{ background: "black", color: "white", userSelect: "none" }}
+    >
       <input
         type="text"
         onChange={handleInputChange}
@@ -138,11 +148,11 @@ export default function Play() {
           </li>
           <li>
             WPM:
-            <span /* ref={WPMRef}*/>{WPM}</span>
+            <span>{WPM}</span>
           </li>
           <li>
             accuracy:
-            <span /*ref={accuracyRef}*/>{accuracy}%</span>
+            <span>{accuracy}%</span>
           </li>
           <li>
             <button

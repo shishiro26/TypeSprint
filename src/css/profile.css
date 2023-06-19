@@ -1,0 +1,22 @@
+.profileContainer {
+    width: 90%;
+    margin: 15px;
+    /* margin: 0px; */
+    padding: 10px;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.profileImage {
+    border-radius: 10px;
+    height: 380px;
+    width: 300px;
+    transition: all ease-in-out 500ms;
+}
+
+.profileImage:hover {
+    transform: scale(1.05);
+}

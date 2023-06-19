@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.loginBtn {
+    text-decoration: none;
+    border: 2px solid transparent;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background: #222; */
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: white;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navBarHeader {
+    position: relative;
+    top: 40px;
+    left: -68px;
+    margin: -14px;
+    color: #222;
+    font-size: 22px;
+    user-select: none;
+}
+
+.navBarHeader:hover {
+    color: #555;
+}
+
+header::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.navBarNav {
+    float: right;
+}
+
+.navBarNav .navBarUL {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navBarNav .navBarLI {
+    float: left;
+    margin-left: 70px;
+    padding-top: 50px;
+    position: relative;
+    top: -20px;
+
+}
+
+.navBarHeader .navBarLink {
+    color: #808080;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.navBarHeader .navBarLink:hover {
+    color: #222222;
+    cursor: pointer;
+}
+
+.navBarHeader .navBarLink::before {
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: #444;
+    position: relative;
+    top: 31px;
+    width: 0%;
+    transition: all ease-in-out 250ms;
+}
+
+.navBarHeader .navBarLink:hover::before {
+    width: 100%;
+    border-radius: 4px;
+}
