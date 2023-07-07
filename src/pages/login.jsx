@@ -17,14 +17,30 @@ export default function Login() {
     email: "",
     password: "",
   });
+  const [errors, setErrors] = useState({})
+
   const [showPassword, setShowPassword] = useState("password");
+  const validateForm = () => {
+    const errors = {};
+    if (!data.email) {
+      errors.email = "Email is required";
+      console.log("Email is required");
+    }
+    if (!data.password) {
+      errors.password = "Password is required"
+      console.log("Password is required");
+
+    }
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
 
   const togglePassword = (e) => {
     e.preventDefault();
     setShowPassword((type) => (type === "password" ? "text" : "password"));
   };
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => { };
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
@@ -34,6 +50,9 @@ export default function Login() {
   const submitForm = (e) => {
     e.preventDefault();
     console.log(data);
+    if (validateForm()) {
+      console.log("Form is being submitted")
+    }
   };
 
   return (
@@ -51,8 +70,12 @@ export default function Login() {
               name="text"
               className="email"
               id="email"
+              value={data.email}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
             />
+            {errors.email && <span className="error">{errors.email}</span>}
           </div>
+
           <div className="mailBox">
             <label className="labelBox" htmlFor="password">
               Password
@@ -63,7 +86,10 @@ export default function Login() {
               name="text"
               className="email"
               id="password"
+              value={data.password}
+              onChange={(e) => setData({ ...data, password: e.target.value })}
             />
+            {errors.password && <span className="error">{errors.password}</span>}
             <img
               src={showPassword === "password" ? hide : show}
               alt="show"
@@ -71,7 +97,7 @@ export default function Login() {
               width={20}
               style={{
                 position: "absolute",
-                top: "320px",
+                top: "300px",
                 right: "460px",
                 cursor: "pointer",
               }}
