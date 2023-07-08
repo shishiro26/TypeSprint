@@ -1,10 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/login.css";
 import { useState } from "react";
 import show from "../assets/show.png";
 import hide from "../assets/hide.png";
 import WebFont from "webfontloader";
+import axios from "axios";
 
 WebFont.load({
   google: {
@@ -13,51 +14,79 @@ WebFont.load({
 });
 
 export default function Login() {
+  const navigate = useNavigate();
+
   const [data, setData] = useState({
     email: "",
     password: "",
   });
-  const [errors, setErrors] = useState({})
+
+  const [errors, setErrors] = useState({});
 
   const [showPassword, setShowPassword] = useState("password");
+
   const validateForm = () => {
     const errors = {};
     if (!data.email) {
       errors.email = "Email is required";
-      console.log("Email is required");
     }
     if (!data.password) {
-      errors.password = "Password is required"
-      console.log("Password is required");
-
+      errors.password = "Password is required";
     }
     setErrors(errors);
     return Object.keys(errors).length === 0;
   };
 
-  const togglePassword = (e) => {
-    e.preventDefault();
+  const login = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:5002/api/v1/auth/login", {
+        username: data.email,
+        password: data.password,
+      });
+
+      if (response.data.message === "Email not exists") {
+        alert("Email does not exist");
+      } else if (response.data.token) {
+        navigate("/");
+      } else {
+        console.log(response.data);
+        alert("Incorrect email and password combination");
+      }
+    } catch (err) {
+      console.log(err);
+      if (err.response.status === 400) {
+        alert("Incorrect password");
+      } else if (err.response.status === 404) {
+        alert("Email does not exist");
+      } else {
+        alert(err.message);
+      }
+    }
+  };
+
+  const togglePassword = () => {
     setShowPassword((type) => (type === "password" ? "text" : "password"));
   };
 
-  const handleSubmit = (e) => { };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      console.log("Form is being submitted");
+      login(e);
+    }
+  };
+
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       handleSubmit(e);
     }
   };
-  const submitForm = (e) => {
-    e.preventDefault();
-    console.log(data);
-    if (validateForm()) {
-      console.log("Form is being submitted")
-    }
-  };
 
   return (
     <div className="container1">
-      <form className="formBox" onSubmit={submitForm}>
+      <form className="formBox" onSubmit={handleSubmit}>
         <h1>Login</h1>
         <div>
           <div className="mailBox">
@@ -65,7 +94,7 @@ export default function Login() {
               Email
             </label>
             <input
-              required=""
+              required
               type="email"
               name="text"
               className="email"
@@ -81,7 +110,7 @@ export default function Login() {
               Password
             </label>
             <input
-              required=""
+              required
               type={showPassword}
               name="text"
               className="email"
@@ -102,12 +131,10 @@ export default function Login() {
                 cursor: "pointer",
               }}
               onClick={togglePassword}
-              onSubmit={handleSubmit}
-              onKeyDown={handleKeyDown}
             />
           </div>
           <hr className="line" />
-          <button className="btnBox"> Login</button>
+          <button className="btnBox">Login</button>
           <div
             className="forgotBox"
             style={{

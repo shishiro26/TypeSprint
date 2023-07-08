@@ -45,7 +45,7 @@ export default function Navbar1() {
             </li>
             <li className="navBarLI">
               <button className="loginBtn">
-                <Link to="/signup">SignUp</Link>
+                <Link to="/register">SignUp</Link>
               </button>
             </li>
             {/* <li>

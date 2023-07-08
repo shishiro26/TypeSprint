@@ -8,12 +8,12 @@ import AboutUs from "./pages/AboutUs";
 import Footer from "./Components/Footer";
 import Play from "./pages/play";
 import Stats from "./pages/stats";
-import SignUp from "./pages/signup";
 import { useEffect } from "react";
 import Navbar1 from "./Components/navBar1";
 // import Preview from "./pages/preview";
 import Profile from "./pages/profile";
 import HomeBar from "./Components/home1";
+import Register from "./pages/Register";
 
 export default function App() {
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function App() {
         <Navbar1 />
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="/Register" element={<Register />} />
           <Route path="/" element={<Home />} />
           {/* <Route path="/preview" element={<Preview />} /> */}
           <Route path="/play" element={<Play />} />
